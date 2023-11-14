@@ -1,10 +1,13 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.17;
+pragma solidity ^0.8.23;
 
-import { ERC20 } from "solmate/tokens/ERC20.sol";
+import "lib/solmate/src/tokens/ERC721.sol";
+import "lib/openzeppelin-contracts/contracts/utils/Strings.sol";
 
-/// @title Greeter
-contract Greeter {
+
+
+/// @title Buzzkill NFT
+contract Buzzkill {
   string public greeting;
   address public owner;
 
