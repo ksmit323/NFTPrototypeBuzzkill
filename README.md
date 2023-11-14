@@ -1,4 +1,4 @@
-<img align="right" width="150" height="150" top="100" src="./public/buzzbuzz.jpg">
+<img align="right" width="150" height="150" top="100" src="./public/buzzbuzz.png">
 
 # Buzzkill NFT 🐝 • ![solidity](https://img.shields.io/badge/solidity-^0.8.23-lightgrey)
 
