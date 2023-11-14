@@ -2,30 +2,27 @@
 pragma solidity ^0.8.23;
 
 import "lib/solmate/src/tokens/ERC721.sol";
-import "lib/openzeppelin-contracts/contracts/utils/Strings.sol";
-
+import "openzeppelin-contracts/contracts/utils/Strings.sol";
 
 
 /// @title Buzzkill NFT
-contract Buzzkill {
-  string public greeting;
-  address public owner;
+contract Buzzkill is ERC721 {
 
-  // CUSTOMS
-  error BadGm();
-  event GMEverybodyGM();
+  uint256 public currentTokenID;
 
-  constructor(string memory newGreeting) {
-    greeting = newGreeting;
-    owner = msg.sender;
+  constructor(
+    string memory _name, 
+    string memory _symbol
+  ) ERC721(_name, _symbol) {}
+
+  function mintTo(address recipient) public payable returns(uint256) {
+    uint256 newItemId = ++currentTokenID;
+    _safeMint(recipient, newItemId);
+    return newItemId;
   }
 
-  function gm(string memory myGm) external returns(string memory greet) {
-    if (keccak256(abi.encodePacked((myGm))) != keccak256(abi.encodePacked((greet = greeting)))) revert BadGm();
-    emit GMEverybodyGM();
+  function tokenURI(uint256 id) public view virtual override returns(string memory) {
+    return Strings.toString(id);
   }
 
-  function setGreeting(string memory newGreeting) external {
-    greeting = newGreeting;
-  }
 }
