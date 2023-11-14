@@ -1,58 +1,27 @@
-<img align="right" width="150" height="150" top="100" src="./public/readme.jpg">
+<img align="right" width="150" height="150" top="100" src="./public/buzzbuzz.jpg">
 
-# NFTPrototypeBuzzkill • [![tests](https://github.com/refcell/NFTPrototypeBuzzkill/actions/workflows/ci.yml/badge.svg?label=tests)](https://github.com/refcell/NFTPrototypeBuzzkill/actions/workflows/ci.yml) ![license](https://img.shields.io/github/license/refcell/NFTPrototypeBuzzkill?label=license) ![solidity](https://img.shields.io/badge/solidity-^0.8.17-lightgrey)
+# Buzzkill NFT 🐝 • ![solidity](https://img.shields.io/badge/solidity-^0.8.23-lightgrey)
 
-A **Clean**, **Robust** Template for Foundry Projects.
+Welcome to Buzzkill, a macroeconomic NFT staking game on the Viction blockchain and in the C98 ecosystem. The beez are collectibles that can be used for various game mechanics for passive or active accrual of tokens.
 
-### Usage
+## Overview
 
-**Building & Testing**
+Buzzkill beez earn $honey in hives. Choose wisely where you stake your Bee, as they'll hustle perpetually with enough $honey. Rarity and traits influence a Bee's productivity score, determining their $honey-making abilities.
 
-Build the foundry project with `forge build`. Then you can run tests with `forge test`.
+## Features
 
-**Deployment & Verification**
+- **Productivity Score:** A Bee's $honey and $nectar earnings depend on its rarity and traits.
+- **Rarity Metrics:** Full metrics and rankings coming soon to [buzzkillNFT.com](#).
+- **Boost Your Bee:** Improve productivity by investing $honey in education. An educated Bee earns more $honey and gains desirability.
 
-Inside the [`utils/`](./utils/) directory are a few preconfigured scripts that can be used to deploy and verify contracts.
+## Getting Started
 
-Scripts take inputs from the cli, using silent mode to hide any sensitive information.
+1. **Stake Your Bee:** Choose a hive or field wisely.
+2. **Productivity Boost:** Enhance your Bee's productivity with education.
+3. **Stay Updated:** Full metrics available soon at [buzzkilNFT.com](#).
 
-_NOTE: These scripts are required to be _executable_ meaning they must be made executable by running `chmod +x ./utils/*`._
+## Join the Swarm!
 
-_NOTE: these scripts will prompt you for the contract name and deployed addresses (when verifying). Also, they use the `-i` flag on `forge` to ask for your private key for deployment. This uses silent mode which keeps your private key from being printed to the console (and visible in logs)._
+Unleash the power of NFTs on the Viction chain with Buzzkill. Stake your Beez, watch them thrive, and become part of a community that values uniqueness, productivity, and sweet $honey.
 
-
-### I'm new, how do I get started?
-
-We created a guide to get you started with: [GETTING_STARTED.md](./GETTING_STARTED.md).
-
-
-### Blueprint
-
-```txt
-lib
-├─ forge-std — https://github.com/foundry-rs/forge-std
-├─ solmate — https://github.com/transmissions11/solmate
-scripts
-├─ Deploy.s.sol — Example Contract Deployment Script
-src
-├─ Greeter — Example Contract
-test
-└─ Greeter.t — Example Contract Tests
-```
-
-
-### Notable Mentions
-
-- [NFTPrototypeBuzzkill](https://github.com/refcell/NFTPrototypeBuzzkill)
-- [foundry](https://github.com/foundry-rs/foundry)
-- [solmate](https://github.com/Rari-Capital/solmate)
-- [forge-std](https://github.com/brockelmore/forge-std)
-- [forge-template](https://github.com/foundry-rs/forge-template)
-- [foundry-toolchain](https://github.com/foundry-rs/foundry-toolchain)
-
-
-### Disclaimer
-
-_These smart contracts are being provided as is. No guarantee, representation or warranty is being made, express or implied, as to the safety or correctness of the user interface or the smart contracts. They have not been audited and as such there can be no assurance they will work as intended, and users may experience delays, failures, errors, omissions, loss of transmitted information or loss of funds. The creators are not liable for any of the foregoing. Users should proceed with caution and use at their own risk._
-
-See [LICENSE](./LICENSE) for more details.
+For more details, visit [buzzkillNFT.com](#).
