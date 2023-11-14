@@ -2,7 +2,7 @@
 
 # Buzzkill NFT 🐝 • ![solidity](https://img.shields.io/badge/solidity-^0.8.23-lightgrey)
 
-Welcome to Buzzkill, a macroeconomic NFT staking game on the Viction blockchain and in the C98 ecosystem. The beez are collectibles that can be used for various game mechanics for passive or active accrual of tokens.
+Welcome to Buzzkill, a macroeconomic NFT staking game on the Viction blockchain and in the C98 ecosystem. The beez are collectibles that can be used for various game mechanics for passive or active accrual of tokens that follow the ERC20 standard called $honey.
 
 ## Overview
 
