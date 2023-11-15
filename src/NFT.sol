@@ -39,10 +39,10 @@ contract Buzzkill is ERC721, Ownable {
     }
 
     _safeMint(recipient, newTokenId);
-    return newItemId;
+    return newTokenId;
   }
 
-  function tokenURI(uint256 tokenid) public view virtual override returns(string memory) {
+  function tokenURI(uint256 tokenId) public view virtual override returns(string memory) {
     if (ownerOf(tokenId) == address(0)) {
       revert NonExistentTokenURI();
     }
@@ -50,7 +50,7 @@ contract Buzzkill is ERC721, Ownable {
     return bytes(baseURI.length) > 0 ? string(abi.encodePacked(baseURI, tokenId.toString())) : "";
   }
 
-  function withdrawPayments(address payable payyee) external onlyOwner {
+  function withdrawPayments(address payable payee) external onlyOwner {
     uint256 balance = address(this).balance;
     (bool transferTx, ) = payee.call{value: balance}("");
     if (!transferTx) {
