@@ -5,7 +5,6 @@ import "forge-std/Test.sol";
 import "../src/NFT.sol";
 
 contract NFTTest is Test {
-
     using stdStorage for StdStorage;
 
     Buzzkill private nft;
@@ -21,7 +20,7 @@ contract NFTTest is Test {
     }
 
     function test_MintPricePaid() public {
-        nft.minTO{value: 0.0073 ether}(address(1));
+        nft.mintTo{value: 0.0073 ether}(address(1));
     }
 
     function test_RevertMintMaxSupplyReached() public {
@@ -32,7 +31,7 @@ contract NFTTest is Test {
         bytes32 loc = bytes32(slot);
         bytes32 mockedCurrentTokenId = bytes32(abi.encode(10000));
         vm.store(address(nft), loc, mockedCurrentTokenId);
-        vm.epectRevert(MaxSupply.selector);
+        vm.expectRevert(MaxSupply.selector);
         nft.mintTo{value: 0.0073 ether}(address(1));
     }
 
@@ -47,8 +46,8 @@ contract NFTTest is Test {
             .target(address(nft))
             .sig(nft.ownerOf.selector)
             .with_key(1)
-            .find;
-        
+            .find();
+
         uint160 ownerOfTokenIdOne = uint160(
             uint256(
                 (vm.load(address(nft), bytes32(abi.encode(slotOfNewOwner))))
@@ -64,7 +63,7 @@ contract NFTTest is Test {
             .sig(nft.balanceOf.selector)
             .with_key(address(1))
             .find();
-        
+
         uint256 balanceFirstMint = uint256(
             vm.load(address(nft), bytes32(slotBalance))
         );
@@ -79,13 +78,13 @@ contract NFTTest is Test {
 
     function test_SafeContractReceiver() public {
         Receiver receiver = new Receiver();
-        nft.minTo{value: 0.0073 ether}(address(receiver));
-        uint256 slotBalance = stdstore 
+        nft.mintTo{value: 0.0073 ether}(address(receiver));
+        uint256 slotBalance = stdstore
             .target(address(nft))
             .sig(nft.balanceOf.selector)
             .with_key(address(receiver))
             .find();
-        
+
         uint256 balance = uint256(vm.load(address(nft), bytes32(slotBalance)));
         assertEq(balance, 1);
     }
@@ -117,7 +116,7 @@ contract Receiver is ERC721TokenReceiver {
         address from,
         uint256 id,
         bytes calldata data
-    ) external override returns(bytes4) {
+    ) external override returns (bytes4) {
         return this.onERC721Received.selector;
     }
 }
